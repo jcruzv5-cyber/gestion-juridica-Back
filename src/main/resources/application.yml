@@ -1,6 +1,6 @@
 quarkus:
   application:
-    name: Gestion Juridica
+    name: Gestion de Docentes
     version: 1.0-SNAPSHOT
 
   # HTTP
