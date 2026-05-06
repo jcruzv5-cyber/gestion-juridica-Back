@@ -1,7 +1,7 @@
-package co.vinni.docentes.aplicacion;
+package co.vinni.clientes.aplicacion;
 
-import co.vinni.docentes.dominio.modelo.Cliente;
-import co.vinni.docentes.dominio.repositorio.ClienteRepositorio;
+import co.vinni.clientes.dominio.modelo.Cliente;
+import co.vinni.clientes.dominio.repositorio.ClienteRepositorio;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
 

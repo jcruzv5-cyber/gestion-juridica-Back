@@ -18,9 +18,9 @@ quarkus:
   datasource:
     db-kind: postgresql
     username: gestion_juridica_user
-    password: TU_PASSWORD_RENDER
+    password: VR5Ze9dU81QphN0VgZdHC7zo77hemKYX
     jdbc:
-      url: jdbc:postgresql://HOST_EXTERNO_RENDER:5432/gestion_juridica?sslmode=require
+      url: jdbc:postgresql://dpg-d7t0dk0sfn5c73ag2v10-a.oregon-postgres.render.com:5432/gestion_juridica?sslmode=require
     devservices:
       enabled: false
 

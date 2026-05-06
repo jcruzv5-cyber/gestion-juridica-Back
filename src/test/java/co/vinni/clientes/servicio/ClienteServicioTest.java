@@ -1,8 +1,8 @@
-package co.vinni.docentes.servicio;
+package co.vinni.clientes.servicio;
 
-import co.vinni.docentes.aplicacion.ClienteServicio;
-import co.vinni.docentes.dominio.modelo.Cliente;
-import co.vinni.docentes.dominio.repositorio.ClienteRepositorio;
+import co.vinni.clientes.aplicacion.ClienteServicio;
+import co.vinni.clientes.dominio.modelo.Cliente;
+import co.vinni.clientes.dominio.repositorio.ClienteRepositorio;
 import io.quarkus.test.InjectMock;
 import io.quarkus.test.junit.QuarkusTest;
 import jakarta.inject.Inject;

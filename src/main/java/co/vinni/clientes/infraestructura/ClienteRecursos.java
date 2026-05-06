@@ -1,8 +1,8 @@
-package co.vinni.docentes.infraestructura;
+package co.vinni.clientes.infraestructura;
 
-import co.vinni.docentes.aplicacion.ClienteServicio;
-import co.vinni.docentes.dominio.modelo.Cliente;
-import co.vinni.docentes.infraestructura.dto.ClienteDto;
+import co.vinni.clientes.aplicacion.ClienteServicio;
+import co.vinni.clientes.dominio.modelo.Cliente;
+import co.vinni.clientes.infraestructura.dto.ClienteDto;
 import jakarta.inject.Inject;
 import jakarta.validation.Valid;
 import jakarta.ws.rs.*;
@@ -10,8 +10,6 @@ import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 import org.eclipse.microprofile.openapi.annotations.Operation;
 import org.eclipse.microprofile.openapi.annotations.responses.APIResponse;
-
-import java.util.List;
 
 @Path("/clientes")
 @Produces(MediaType.APPLICATION_JSON)

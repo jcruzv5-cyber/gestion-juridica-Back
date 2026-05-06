@@ -1,8 +1,8 @@
-package co.vinni.docentes.infraestructura.persistencia;
+package co.vinni.clientes.infraestructura.persistencia;
 
-import co.vinni.docentes.dominio.modelo.Cliente;
-import co.vinni.docentes.dominio.modelo.ClienteEntity;
-import co.vinni.docentes.dominio.repositorio.ClienteRepositorio;
+import co.vinni.clientes.dominio.modelo.Cliente;
+import co.vinni.clientes.dominio.modelo.ClienteEntity;
+import co.vinni.clientes.dominio.repositorio.ClienteRepositorio;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.transaction.Transactional;
 

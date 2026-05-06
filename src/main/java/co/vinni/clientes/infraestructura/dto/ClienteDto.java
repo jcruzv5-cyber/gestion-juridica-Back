@@ -1,4 +1,4 @@
-package co.vinni.docentes.infraestructura.dto;
+package co.vinni.clientes.infraestructura.dto;
 
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;

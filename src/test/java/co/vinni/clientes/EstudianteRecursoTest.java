@@ -1,4 +1,4 @@
-package co.vinni.docentes;
+package co.vinni.clientes;
 
 import io.quarkus.test.junit.QuarkusTest;
 import io.restassured.http.ContentType;
