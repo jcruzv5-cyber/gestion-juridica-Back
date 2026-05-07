@@ -1,57 +1,67 @@
 quarkus:
   application:
-    name: gestion-juridica-back
+    name: Gestion de Docentes
     version: 1.0-SNAPSHOT
 
+  # HTTP
   http:
     port: 8860
     host: localhost
-    cors:
-      enabled: true
-      origins: "http://localhost:4200"
-      methods: GET,POST,PUT,DELETE,OPTIONS
-      headers: Content-Type,Authorization,X-Requested-With,Origin,Accept
+    root-path: kkom
+    cors: true
+    cors-origins: '*'
+    cors-methods: GET,POST,PUT,DELETE,OPTIONS
+    cors-headers: Content-Type,Authorization,X-Requested-With
 
+
+  # Base de datos
   datasource:
-    db-kind: postgresql
-    username: gestion_juridica_user
-    password: VR5Ze9dU81QphN0VgZdHC7zo77hemKYX
+    db-kind: h2
+    username: admin
+    password: 12345
     jdbc:
-      url: jdbc:postgresql://dpg-d7t0dk0sfn5c73ag2v10-a.oregon-postgres.render.com:5432/gestion_juridica?sslmode=require
-    devservices:
-      enabled: false
+      #url: "jdbc:h2:mem:gdocente"
+      file: ./data/comedor_db
 
+  # Hibernate-hibernate-orm:
   hibernate-orm:
-    database:
-      generation: update
+    schema-management:
+      strategy:
+        drop-and-create
     log:
       sql: true
 
+
+  # Configuracion de Logs
   log:
     level: INFO
     console:
       enabled: true
       format: "%d{yyyy-MM-dd HH:mm:ss,SSS} %-5p [%c{3.}] (%t) %s%e%n"
+      dark-launch: true
+
     file:
       enabled: true
-      path: logs/gestion-juridica.log
+      path: logs/gestudiantes.log
       format: "%d{yyyy-MM-dd HH:mm:ss,SSS} %-5p [%c{3.}] (%t) %s%e%n"
       rotation:
-        max-file-size: 5M
-        max-backup-index: 5
-        file-suffix: yyyy-MM-dd
+        max-file-size: 5M # Tamaño máximo
+        max-backup-index: 5 # Archivos conservados
+        file-suffix: yyyy-MM-dd #Sufijo de retación
 
   swagger-ui:
+    enabled: true
     always-include: true
-    path: /swagger-ui
-
-  smallrye-openapi:
-    path: /openapi
+    path: "/swager-ui"
+    title: "Comedor comunitario - Vinni"
+    description: "API generado en Quarkus para gestion de comedor comunitario"
+    version: "V1"
+    contact-name: "vinni9@gmail.com"
 
 mp:
   openapi:
     extensions:
       smallrye:
         info:
-          title: "Gestion juridica"
+          title: "Comedor Comunitario"
           version: "1.1.0"
