@@ -8,6 +8,7 @@ import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 
+// Endpoint REST - expone la ruta /abogados para recibir peticiones HTTP
 @Path("/abogados")
 @Produces(MediaType.APPLICATION_JSON)
 @Consumes(MediaType.APPLICATION_JSON)
@@ -16,6 +17,7 @@ public class AbogadosRecursos {
     @Inject
     AbogadoServicio abogadoServicio;
 
+    // POST /abogados - registra un nuevo abogado
     @POST
     public Response registrar(@Valid AbogadoDto dto) {
         return Response.status(Response.Status.CREATED)

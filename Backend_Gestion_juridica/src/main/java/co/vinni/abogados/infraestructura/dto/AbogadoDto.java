@@ -3,6 +3,7 @@ package co.vinni.abogados.infraestructura.dto;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 
+// DTO - objeto que recibe los datos del formulario del frontend
 public class AbogadoDto {
 
     @NotBlank

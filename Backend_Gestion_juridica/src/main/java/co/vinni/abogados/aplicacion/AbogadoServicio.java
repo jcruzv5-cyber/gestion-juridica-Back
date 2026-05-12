@@ -5,6 +5,7 @@ import co.vinni.abogados.infraestructura.dto.AbogadoDto;
 import co.vinni.abogados.repositorio.AbogadoRepositorio;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
+import jakarta.transaction.Transactional;
 
 @ApplicationScoped
 public class AbogadoServicio {
@@ -12,6 +13,7 @@ public class AbogadoServicio {
     @Inject
     AbogadoRepositorio abogadoRepositorio;
 
+    @Transactional
     public AbogadoEntity registrar(AbogadoDto dto) {
         AbogadoEntity entity = new AbogadoEntity();
         entity.setNombreCompleto(dto.nombreCompleto);

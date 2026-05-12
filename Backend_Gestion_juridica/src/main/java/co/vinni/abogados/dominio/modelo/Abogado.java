@@ -1,5 +1,6 @@
 package co.vinni.abogados.dominio.modelo;
 
+// Modelo de dominio - representa un abogado en la lógica del negocio
 public class Abogado {
     private Long id;
     private String nombreCompleto;
@@ -13,15 +14,15 @@ public class Abogado {
     public Long getId() { return id; }
     public void setId(Long id) { this.id = id; }
     public String getNombreCompleto() { return nombreCompleto; }
-    public void setNombreCompleto(String nombreCompleto) { this.nombreCompleto = nombreCompleto; }
+    public void setNombreCompleto(String n) { this.nombreCompleto = n; }
     public String getNumeroCedula() { return numeroCedula; }
-    public void setNumeroCedula(String numeroCedula) { this.numeroCedula = numeroCedula; }
+    public void setNumeroCedula(String n) { this.numeroCedula = n; }
     public String getTarjetaProfesional() { return tarjetaProfesional; }
-    public void setTarjetaProfesional(String tarjetaProfesional) { this.tarjetaProfesional = tarjetaProfesional; }
+    public void setTarjetaProfesional(String t) { this.tarjetaProfesional = t; }
     public String getEspecialidad() { return especialidad; }
-    public void setEspecialidad(String especialidad) { this.especialidad = especialidad; }
+    public void setEspecialidad(String e) { this.especialidad = e; }
     public String getCorreoElectronico() { return correoElectronico; }
-    public void setCorreoElectronico(String correoElectronico) { this.correoElectronico = correoElectronico; }
+    public void setCorreoElectronico(String c) { this.correoElectronico = c; }
     public String getTelefono() { return telefono; }
-    public void setTelefono(String telefono) { this.telefono = telefono; }
+    public void setTelefono(String t) { this.telefono = t; }
 }
