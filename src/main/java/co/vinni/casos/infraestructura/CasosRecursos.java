@@ -37,6 +37,7 @@ public class CasosRecursos {
                 .estado(casoDto.estado())
                 .prioridad(casoDto.prioridad())
                 .fechaCreacion(LocalDateTime.now().format(DateTimeFormatter.ISO_LOCAL_DATE_TIME))
+                .valorTotal(casoDto.valorTotal())
                 .build();
         casoServicio.crear(caso);
         return Response.status(Response.Status.CREATED).build();
@@ -56,7 +57,9 @@ public class CasosRecursos {
                         caso.descripcion,
                         caso.estado,
                         caso.prioridad,
-                        caso.fechaCreacion))
+                        caso.fechaCreacion,
+                        caso.valorTotal,
+                        caso.saldoPendiente))
                 .toList();
         return Response.status(Response.Status.OK).entity(casoDtos).build();
     }

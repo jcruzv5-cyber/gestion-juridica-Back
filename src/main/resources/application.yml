@@ -2,6 +2,7 @@ quarkus:
   application:
     name: gestion-juridica-back
     version: 1.0-SNAPSHOT
+
   http:
     port: 8860
     host: localhost
@@ -10,6 +11,7 @@ quarkus:
       origins: "http://localhost:4200"
       methods: GET,POST,PUT,DELETE,OPTIONS
       headers: Content-Type,Authorization,X-Requested-With,Origin,Accept
+
   datasource:
     db-kind: postgresql
     username: gestion_juridica_user
@@ -18,11 +20,13 @@ quarkus:
       url: jdbc:postgresql://dpg-d7t0dk0sfn5c73ag2v10-a.oregon-postgres.render.com:5432/gestion_juridica?sslmode=require
     devservices:
       enabled: false
+
   hibernate-orm:
     database:
       generation: update
     log:
       sql: true
+
   log:
     level: INFO
     console:
@@ -36,11 +40,14 @@ quarkus:
         max-file-size: 5M
         max-backup-index: 5
         file-suffix: yyyy-MM-dd
+
   swagger-ui:
     always-include: true
     path: /swagger-ui
+
   smallrye-openapi:
     path: /openapi
+
 mp:
   openapi:
     extensions:

@@ -5,6 +5,7 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.NoArgsConstructor;
+import java.math.BigDecimal;
 
 @Entity
 @Table(name = "CASOS")
@@ -27,4 +28,10 @@ public class CasoEntity extends PanacheEntity {
 
     @Column(name = "fecha_creacion", length = 30)
     public String fechaCreacion;
+
+    @Column(name = "valor_total", precision = 15, scale = 2)
+    public BigDecimal valorTotal;
+
+    @Column(name = "saldo_pendiente", precision = 15, scale = 2)
+    public BigDecimal saldoPendiente;
 }

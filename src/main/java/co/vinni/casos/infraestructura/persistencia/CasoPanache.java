@@ -6,6 +6,7 @@ import co.vinni.casos.dominio.repositorio.CasoRepositorio;
 import io.quarkus.hibernate.orm.panache.PanacheRepository;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.transaction.Transactional;
+import jakarta.ws.rs.NotFoundException;
 import java.math.BigDecimal;
 import java.util.List;
 import java.util.Optional;
@@ -24,48 +25,42 @@ public class CasoPanache implements CasoRepositorio, PanacheRepository<CasoEntit
                 .prioridad(caso.prioridad)
                 .fechaCreacion(caso.fechaCreacion)
                 .valorTotal(caso.valorTotal)
+                .saldoPendiente(caso.valorTotal)
                 .build();
         persist(entity);
     }
 
     @Override
     public List<Caso> obtenerTodos() {
-        return listAll().stream().map(entidad ->
-                Caso.builder()
-                        .id(entidad.id)
-                        .titulo(entidad.titulo)
-                        .descripcion(entidad.descripcion)
-                        .estado(entidad.estado)
-                        .prioridad(entidad.prioridad)
-                        .fechaCreacion(entidad.fechaCreacion)
-                        .valorTotal(entidad.valorTotal)
-                        .saldoPendiente(entidad.saldoPendiente)
-                        .build()
-        ).toList();
+        return listAll().stream()
+                .map(this::toDomain)
+                .toList();
     }
 
     @Override
     public Optional<Caso> buscarPorId(Long id) {
-        return findByIdOptional(id).map(entidad ->
-                Caso.builder()
-                        .id(entidad.id)
-                        .titulo(entidad.titulo)
-                        .descripcion(entidad.descripcion)
-                        .estado(entidad.estado)
-                        .prioridad(entidad.prioridad)
-                        .fechaCreacion(entidad.fechaCreacion)
-                        .valorTotal(entidad.valorTotal)
-                        .saldoPendiente(entidad.saldoPendiente)
-                        .build()
-        );
+        return findByIdOptional(id).map(this::toDomain);
     }
 
     @Override
     @Transactional
     public void actualizarSaldoPendiente(Long casoId, BigDecimal saldoPendiente) {
-        findByIdOptional(casoId).ifPresent(entity -> {
-            entity.saldoPendiente = saldoPendiente;
-            persist(entity);
-        });
+        findByIdOptional(casoId).ifPresentOrElse(
+                entity -> entity.saldoPendiente = saldoPendiente,
+                () -> { throw new NotFoundException("Caso no encontrado con id: " + casoId); }
+        );
+    }
+
+    private Caso toDomain(CasoEntity e) {
+        return Caso.builder()
+                .id(e.id)
+                .titulo(e.titulo)
+                .descripcion(e.descripcion)
+                .estado(e.estado)
+                .prioridad(e.prioridad)
+                .fechaCreacion(e.fechaCreacion)
+                .valorTotal(e.valorTotal)
+                .saldoPendiente(e.saldoPendiente)
+                .build();
     }
 }
