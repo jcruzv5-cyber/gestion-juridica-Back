@@ -1,0 +1,5 @@
+co\vinni\common\infraestructure\ResponseApiError$ResponseApiErrorBuilder.class
+co\vinni\common\ValidationExceptionMapper.class
+co\vinni\common\infraestructure\ResponseApiError.class
+co\vinni\common\filter\CorsFilter.class
+co\vinni\common\infraestructure\ResponseApi.class
