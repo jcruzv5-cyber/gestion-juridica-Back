@@ -34,6 +34,15 @@ public class CasoEntity {
     @Column(name = "responsable", nullable = false)
     private String responsable;
 
+    @Column(name = "estado")
+    private String estado;
+
+    @Column(name = "prioridad")
+    private String prioridad;
+
+    @Column(name = "abogado_id")
+    private Long abogadoId;
+
     @Column(name = "fecha_creacion")
     private LocalDateTime fechaCreacion;
 
@@ -45,24 +54,107 @@ public class CasoEntity {
         this.fechaCreacion = LocalDateTime.now();
     }
 
-    public Long getId() { return id; }
-    public void setId(Long id) { this.id = id; }
-    public String getNumeroRadicado() { return numeroRadicado; }
-    public void setNumeroRadicado(String numeroRadicado) { this.numeroRadicado = numeroRadicado; }
-    public LocalDate getFechaInicio() { return fechaInicio; }
-    public void setFechaInicio(LocalDate fechaInicio) { this.fechaInicio = fechaInicio; }
-    public String getTipoCaso() { return tipoCaso; }
-    public void setTipoCaso(String tipoCaso) { this.tipoCaso = tipoCaso; }
-    public String getDescripcion() { return descripcion; }
-    public void setDescripcion(String descripcion) { this.descripcion = descripcion; }
-    public String getCliente() { return cliente; }
-    public void setCliente(String cliente) { this.cliente = cliente; }
-    public String getParteDemandada() { return parteDemandada; }
-    public void setParteDemandada(String parteDemandada) { this.parteDemandada = parteDemandada; }
-    public String getResponsable() { return responsable; }
-    public void setResponsable(String responsable) { this.responsable = responsable; }
-    public LocalDateTime getFechaCreacion() { return fechaCreacion; }
-    public void setFechaCreacion(LocalDateTime fechaCreacion) { this.fechaCreacion = fechaCreacion; }
-    public String getUsuarioCreacion() { return usuarioCreacion; }
-    public void setUsuarioCreacion(String usuarioCreacion) { this.usuarioCreacion = usuarioCreacion; }
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getNumeroRadicado() {
+        return numeroRadicado;
+    }
+
+    public void setNumeroRadicado(String numeroRadicado) {
+        this.numeroRadicado = numeroRadicado;
+    }
+
+    public LocalDate getFechaInicio() {
+        return fechaInicio;
+    }
+
+    public void setFechaInicio(LocalDate fechaInicio) {
+        this.fechaInicio = fechaInicio;
+    }
+
+    public String getTipoCaso() {
+        return tipoCaso;
+    }
+
+    public void setTipoCaso(String tipoCaso) {
+        this.tipoCaso = tipoCaso;
+    }
+
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
+
+    public String getCliente() {
+        return cliente;
+    }
+
+    public void setCliente(String cliente) {
+        this.cliente = cliente;
+    }
+
+    public String getParteDemandada() {
+        return parteDemandada;
+    }
+
+    public void setParteDemandada(String parteDemandada) {
+        this.parteDemandada = parteDemandada;
+    }
+
+    public String getResponsable() {
+        return responsable;
+    }
+
+    public void setResponsable(String responsable) {
+        this.responsable = responsable;
+    }
+
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
+    }
+
+    public String getPrioridad() {
+        return prioridad;
+    }
+
+    public void setPrioridad(String prioridad) {
+        this.prioridad = prioridad;
+    }
+
+    public Long getAbogadoId() {
+        return abogadoId;
+    }
+
+    public void setAbogadoId(Long abogadoId) {
+        this.abogadoId = abogadoId;
+    }
+
+    public LocalDateTime getFechaCreacion() {
+        return fechaCreacion;
+    }
+
+    public void setFechaCreacion(LocalDateTime fechaCreacion) {
+        this.fechaCreacion = fechaCreacion;
+    }
+
+    public String getUsuarioCreacion() {
+        return usuarioCreacion;
+    }
+
+    public void setUsuarioCreacion(String usuarioCreacion) {
+        this.usuarioCreacion = usuarioCreacion;
+    }
 }

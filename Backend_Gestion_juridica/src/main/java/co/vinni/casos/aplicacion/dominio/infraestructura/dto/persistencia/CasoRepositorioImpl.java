@@ -6,6 +6,7 @@ import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
 import jakarta.persistence.EntityManager;
 import jakarta.transaction.Transactional;
+import java.util.List;
 
 @ApplicationScoped
 public class CasoRepositorioImpl implements CasoRepositorio {
@@ -21,6 +22,15 @@ public class CasoRepositorioImpl implements CasoRepositorio {
         return toDomain(entity);
     }
 
+    @Override
+    public List<Caso> listarTodos() {
+            return em.createQuery("FROM CasoEntity", CasoEntity.class)
+                    .getResultList()
+                    .stream()
+                    .map(this::toDomain)
+                    .toList();
+    }
+
     private CasoEntity toEntity(Caso caso) {
         CasoEntity e = new CasoEntity();
         e.setNumeroRadicado(caso.getNumeroRadicado());
@@ -30,12 +40,19 @@ public class CasoRepositorioImpl implements CasoRepositorio {
         e.setCliente(caso.getCliente());
         e.setParteDemandada(caso.getParteDemandada());
         e.setResponsable(caso.getResponsable());
+
+        e.setEstado(caso.getEstado());
+        e.setPrioridad(caso.getPrioridad());
+        e.setAbogadoId(caso.getAbogadoId());
+
         e.setUsuarioCreacion(caso.getUsuarioCreacion());
+
         return e;
     }
 
     private Caso toDomain(CasoEntity e) {
         Caso c = new Caso();
+
         c.setId(e.getId());
         c.setNumeroRadicado(e.getNumeroRadicado());
         c.setFechaInicio(e.getFechaInicio());
@@ -44,8 +61,14 @@ public class CasoRepositorioImpl implements CasoRepositorio {
         c.setCliente(e.getCliente());
         c.setParteDemandada(e.getParteDemandada());
         c.setResponsable(e.getResponsable());
+
+        c.setEstado(e.getEstado());
+        c.setPrioridad(e.getPrioridad());
+        c.setAbogadoId(e.getAbogadoId());
+
         c.setFechaCreacion(e.getFechaCreacion());
         c.setUsuarioCreacion(e.getUsuarioCreacion());
+
         return c;
     }
 }

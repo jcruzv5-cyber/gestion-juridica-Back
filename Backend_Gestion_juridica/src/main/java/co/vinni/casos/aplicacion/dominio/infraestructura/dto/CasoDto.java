@@ -26,22 +26,99 @@ public class CasoDto {
     @NotBlank(message = "El responsable es obligatorio")
     private String responsable;
 
+    private String estado;
+
+    private String prioridad;
+
+    private Long abogadoId;
+
     private String usuarioCreacion;
 
-    public String getNumeroRadicado() { return numeroRadicado; }
-    public void setNumeroRadicado(String numeroRadicado) { this.numeroRadicado = numeroRadicado; }
-    public LocalDate getFechaInicio() { return fechaInicio; }
-    public void setFechaInicio(LocalDate fechaInicio) { this.fechaInicio = fechaInicio; }
-    public String getTipoCaso() { return tipoCaso; }
-    public void setTipoCaso(String tipoCaso) { this.tipoCaso = tipoCaso; }
-    public String getDescripcion() { return descripcion; }
-    public void setDescripcion(String descripcion) { this.descripcion = descripcion; }
-    public String getCliente() { return cliente; }
-    public void setCliente(String cliente) { this.cliente = cliente; }
-    public String getParteDemandada() { return parteDemandada; }
-    public void setParteDemandada(String parteDemandada) { this.parteDemandada = parteDemandada; }
-    public String getResponsable() { return responsable; }
-    public void setResponsable(String responsable) { this.responsable = responsable; }
-    public String getUsuarioCreacion() { return usuarioCreacion; }
-    public void setUsuarioCreacion(String usuarioCreacion) { this.usuarioCreacion = usuarioCreacion; }
+    public String getNumeroRadicado() {
+        return numeroRadicado;
+    }
+
+    public void setNumeroRadicado(String numeroRadicado) {
+        this.numeroRadicado = numeroRadicado;
+    }
+
+    public LocalDate getFechaInicio() {
+        return fechaInicio;
+    }
+
+    public void setFechaInicio(LocalDate fechaInicio) {
+        this.fechaInicio = fechaInicio;
+    }
+
+    public String getTipoCaso() {
+        return tipoCaso;
+    }
+
+    public void setTipoCaso(String tipoCaso) {
+        this.tipoCaso = tipoCaso;
+    }
+
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
+
+    public String getCliente() {
+        return cliente;
+    }
+
+    public void setCliente(String cliente) {
+        this.cliente = cliente;
+    }
+
+    public String getParteDemandada() {
+        return parteDemandada;
+    }
+
+    public void setParteDemandada(String parteDemandada) {
+        this.parteDemandada = parteDemandada;
+    }
+
+    public String getResponsable() {
+        return responsable;
+    }
+
+    public void setResponsable(String responsable) {
+        this.responsable = responsable;
+    }
+
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
+    }
+
+    public String getPrioridad() {
+        return prioridad;
+    }
+
+    public void setPrioridad(String prioridad) {
+        this.prioridad = prioridad;
+    }
+
+    public Long getAbogadoId() {
+        return abogadoId;
+    }
+
+    public void setAbogadoId(Long abogadoId) {
+        this.abogadoId = abogadoId;
+    }
+
+    public String getUsuarioCreacion() {
+        return usuarioCreacion;
+    }
+
+    public void setUsuarioCreacion(String usuarioCreacion) {
+        this.usuarioCreacion = usuarioCreacion;
+    }
 }

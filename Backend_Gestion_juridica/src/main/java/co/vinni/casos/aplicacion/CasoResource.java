@@ -9,6 +9,7 @@ import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 import java.util.Map;
+import java.util.List;
 
 @Path("/casos")
 @Produces(MediaType.APPLICATION_JSON)
@@ -28,6 +29,9 @@ public class CasoResource {
         caso.setCliente(dto.getCliente());
         caso.setParteDemandada(dto.getParteDemandada());
         caso.setResponsable(dto.getResponsable());
+        caso.setEstado(dto.getEstado());
+        caso.setPrioridad(dto.getPrioridad());
+        caso.setAbogadoId(dto.getAbogadoId());
         caso.setUsuarioCreacion(dto.getUsuarioCreacion());
 
         Caso resultado = casoServicio.registrarCaso(caso);
@@ -40,4 +44,12 @@ public class CasoResource {
                 ))
                 .build();
     }
+
+        @GET
+        public Response listarCasos() {
+
+            return Response.ok(
+                    casoServicio.listarCasos()
+            ).build();
+}
 }
